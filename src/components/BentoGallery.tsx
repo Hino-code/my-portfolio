@@ -67,7 +67,7 @@ export function BentoGallery({ isOpen, onClose, projectTitle, images }: BentoGal
                 <ImageWithFallback
                   src={image}
                   alt={`${projectTitle} image ${index + 1}`}
-                  className="w-full h-full object-contain bg-white group-hover:scale-105 sm:group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover bg-white group-hover:scale-105 sm:group-hover:scale-110 transition-transform duration-500"
                 />
                 
                 {/* Hover Overlay */}
