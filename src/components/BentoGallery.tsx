@@ -67,7 +67,7 @@ export function BentoGallery({ isOpen, onClose, projectTitle, images }: BentoGal
                 <ImageWithFallback
                   src={image}
                   alt={`${projectTitle} image ${index + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-105 sm:group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-contain bg-white group-hover:scale-105 sm:group-hover:scale-110 transition-transform duration-500"
                 />
                 
                 {/* Hover Overlay */}
@@ -88,18 +88,19 @@ export function BentoGallery({ isOpen, onClose, projectTitle, images }: BentoGal
             onClick={closeImageModal}
           />
           
-          <div className="relative max-w-[90vw] max-h-[90vh] bg-white rounded-lg overflow-hidden">
+          <div className="relative w-full h-full flex items-center justify-center">
             <button
               onClick={closeImageModal}
-              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/70 text-white hover:bg-black/90 transition-colors"
+              className="absolute top-4 right-4 z-20 p-3 rounded-full bg-black/80 text-white hover:bg-black/90 transition-colors backdrop-blur-sm"
             >
-              <X className="w-5 h-5" />
+              <X className="w-6 h-6" />
             </button>
             
             <img 
               src={selectedImage}
               alt="Full size view"
-              className="max-w-full max-h-full object-contain"
+              className="max-w-[95vw] max-h-[95vh] object-contain shadow-2xl"
+              style={{ objectFit: 'contain' }}
             />
           </div>
         </div>
